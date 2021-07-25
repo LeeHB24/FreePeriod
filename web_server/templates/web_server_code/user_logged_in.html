@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>공강때 뭐해?</title>
+<meta charset="UTF-8">
+<style type="text/css">
+    .my-box { border:2px solid; padding:10px; }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type = "text/javascript">
+        var liRowIdx = 0;
+        var user_list= {{ content_of_users | tojson }};
+        var num_of_users = user_list.length;
+        var num=0;
+
+        var userEmail = document.getElementsByName('name');
+        console.log(userEmail);
+
+    function sortTable(){
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("user_table");
+        switching = true;
+
+        while (switching) {
+        switching = false;
+        rows = table.rows;
+
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[3];
+      console.log(x);
+      y = rows[i + 1].getElementsByTagName("TD")[3];
+      //check if the two rows should switch place:
+      if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+        //if so, mark as a switch and break the loop:
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+
+
+    function make_user_table() {
+         for (var user_index = 0; user_index < num_of_users; user_index++) {
+               addRow(user_list[user_index][0],user_list[user_index][1],user_list[user_index][2],user_list[user_index][3],user_list[user_index][4],user_list[user_index][5],user_index);
+         }
+         sortTable();
+    }
+
+      function addRow(id,name,email,school,count,average,num) {    
+
+        var oRow = document.all.user_table.insertRow();
+
+        var oCell0 = oRow.insertCell();
+        var oCell1 = oRow.insertCell();
+        var oCell2 = oRow.insertCell();
+        var oCell3 = oRow.insertCell();
+        var oCell4 = oRow.insertCell();
+        var oCell5 = oRow.insertCell();
+        
+
+        oCell0.innerHTML = name;
+        oCell1.innerHTML = email;
+        oCell2.innerHTML = school;
+        oCell3.innerHTML = count;
+        oCell4.innerHTML = average;
+
+
+
+        var stopBtn = document.createElement( 'button' );
+        var stopText = document.createTextNode( '정지' );
+        stopBtn.setAttribute('value',email);
+        stopBtn.setAttribute('id',hi);
+        stopBtn.setAttribute('onclick','stop()');
+
+        
+
+        var reviewBtn = document.createElement( 'button' );
+        var reviewText = document.createTextNode( '리뷰확인' );
+        reviewBtn.setAttribute('value',id);
+        reviewBtn.setAttribute('onclick','showreview()');
+        
+        
+
+        stopBtn.appendChild( stopText );
+        reviewBtn.appendChild(reviewText);
+        
+        //버튼 클릭 할 경우 여기서 처리 (onclick="")
+        oCell5.appendChild(stopBtn);
+        oCell5.appendChild(reviewBtn);
+
+
+        liRowIdx++;
+      }
+
+     // function newpopup() {
+       //     window.open("show_content", "popup_data", "width=800, height=400,left=100,top=100,toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no");
+       // }
+
+function stop(){
+      $(function(){
+        $('button').on('click', function(){    
+            var email = $(this).val();
+          $.ajax({
+            url:'/update_user',
+            data: {"email" :email},
+            type : 'POST',
+            success: function(response){
+                console.log('전송 성공');
+            },
+            error: function(error){
+                console.log(error);
+            }
+          });
+        });
+      });  
+}
+
+function showreview(){
+      $(function(){
+        $('button').on('click', function(){            
+            var id = $(this).val();
+            $.ajax({
+            url:'/show_review_popup',
+            data: {'param1' : id},
+            dataType: 'json',
+            type : 'POST',
+            success: function(response){
+                console.log(response.result);
+                console.log('전송 성공');
+                
+                var result2=response.result;
+                if(result2.length==0)
+                    document.getElementById("hi").innerHTML = "리뷰가 존재하지 않습니다";
+                else
+                    document.getElementById("hi").innerHTML= result2;
+            
+            },
+            error: function(error){
+                console.log(error);
+            }
+          });
+         
+        });
+      });      
+}
+     
+       </script>
+
+<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
+</head> 
+
+<body>
+<table id="user_table" border="1" cellspaceing="0" style="width: 800px; height: 400px; display: block; overflow: auto;">
+  <tr>
+      <td width="140">
+          이름
+      </td>
+      <td width="200">
+          이메일
+      </td>
+      <td width="120">
+          학교
+      </td>
+      <td width="80">
+          신고횟수
+      </td>
+      <td width="40">
+          평점
+      </td>
+      <td width="210">
+        관리
+       </td>
+  </tr>
+</table>
+
+<script>
+sortTable();
+</script>
+
+<div class="my-box">리뷰확인
+<p id=hi></p>
+</div>
+    </form>
+
+
+</body>
+</html>

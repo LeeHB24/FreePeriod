@@ -1,0 +1,222 @@
+<div>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script language="javascript" type="text/javascript" src="/root/jquery/src/jquery.js"> -->
+    <script language="javascript" type="text/javascript">
+        // src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"
+
+        var liRowIdx = 0;
+        var lecture_list = {{ content_of_lectures | tojson }};
+        var num_of_lectures = lecture_list.length;
+        var lecture_json = new Array();
+        var lecture_table = document.all.lecture_table;
+        
+        for (var i = 0; i < num_of_lectures; i++) {
+            lecture_json[i] = new Array();
+        }
+        
+        for (var lecture_index = 0; lecture_index < lecture_list.length; lecture_index++) {
+            for (var lecture_elem_index = 0; lecture_elem_index < lecture_list[lecture_index].length; lecture_elem_index++) {
+                lecture_json[lecture_index][lecture_elem_index] = JSON.parse(lecture_list[lecture_index][lecture_elem_index]);
+            }
+        }
+        
+        function make_lecture_table() {
+            for (var lecture_index = 0; lecture_index < num_of_lectures; lecture_index++) {
+                var class_info_string = classInfoParser(lecture_json[lecture_index][1].class_info);
+                addRow(lecture_json[lecture_index][1].major, lecture_json[lecture_index][1].lecture_name, lecture_json[lecture_index][1].prof_name, class_info_string, lecture_json[lecture_index][0]);
+                class_info_string = "";
+            }
+            // document.getElementById("testMessage").innerHTML = JSON.stringify(lecture_json[0][0]);
+        }
+
+        function classInfoParser(class_info_json) {
+            var class_info_string = "";
+            for (var class_info_index = 0; class_info_index < class_info_json.length; class_info_index++) {
+
+                class_info_string += " 강의실 : "
+                class_info_string += class_info_json[class_info_index].place;
+                class_info_string += " 강의 일자 : "
+                class_info_string += class_info_json[class_info_index].day;
+                class_info_string += " "
+                var startHour = class_info_json[class_info_index].start_time / 60;
+                var startMinute = class_info_json[class_info_index].start_time % 60;
+                class_info_string += startHour + ":" + startMinute;
+                class_info_string += " ~ "
+                var endHour = class_info_json[class_info_index].end_time / 60;
+                var endMinute = class_info_json[class_info_index].end_time % 60;
+                class_info_string += endHour + ":" + endMinute;
+                
+                class_info_string += "<BR/>";
+            }
+            return class_info_string;
+        }
+
+        function popup_add_lecture(major, lectureName, profName, lectureInfo) {
+
+            lectureInfoJson = JSON.parse("{" + lectureInfo + "}").class_info;
+            
+            var class_info = classInfoParser(lectureInfoJson);
+
+            lectureToAdd = "{\"major\": \"" + major + 
+            "\", \"prof_name\": \"" + profName + 
+            "\", " + lectureInfo +
+            ", \"lecture_name\": \"" + lectureName +
+            "\"}"
+
+            sendToFlask(lectureToAdd);
+            
+            // 강제로 재로드 하게 만들기
+            // location.reload();
+            // addRow(major, lectureName, profName, classInfo, lectureId);
+        }
+
+        function sendToFlask(json_obj) {
+            $.ajax({
+                url:'/addLectureToDB',
+                data: {"lecture" :json_obj},
+                type : 'POST',
+                success: function(response){
+                    console.log('전송 성공');
+                },
+                error: function(error){
+                    console.log(error);
+                }
+            });
+        }
+
+        function addRow(major, lectureName, prof_name, class_info, lectureId) {    
+
+            if (major != "" && lectureName != "" && prof_name != "" && class_info != "") {
+                var oRow = document.all.lecture_table.insertRow();
+
+                var oCell0 = oRow.insertCell();
+                var oCell1 = oRow.insertCell();
+                var oCell2 = oRow.insertCell();
+                var oCell3 = oRow.insertCell();
+                var oCell4 = oRow.insertCell();
+
+                oCell0.innerHTML = major;
+                oCell1.innerHTML = lectureName;
+                oCell2.innerHTML = prof_name;
+                oCell3.innerHTML = class_info;
+                
+                // var updateButton = document.createElement( 'button' );
+                // updateButton.setAttribute('onclick', 'deleteLecture()')
+                
+                // var updateText = document.createTextNode( '수정' );
+                // updateButton.appendChild( updateText );
+                
+                // oCell4.appendChild(updateButton);
+                
+                var DELButton = document.createElement( 'button' );
+                var DELText = document.createTextNode('삭제');
+                // DELText.nodeValue = liRowIdx;
+                DELButton.setAttribute('onclick', ' deleteLecture() ');
+                DELButton.value = lectureId + " " + liRowIdx;
+                
+                // DELButton.
+                DELButton.appendChild(DELText);
+                oCell4.appendChild(DELButton);
+                
+                liRowIdx++;
+            }
+            else {
+                // alert
+            }
+        }
+        // function updateLecturePopup(lectureId) {
+        //     // window.open()
+        //     alert("미완성 : " + lectureId + "번 강의 수정");
+        //     // window.open("add_lecture_popup", "popup_data", "width=800, height=400,left=100,top=100,toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no");
+        // }    
+        // function delRow1(tdl) {
+
+        //     if (liRowIdx > 0) {
+        //         lecture_table.deleteRow(liRowIdx--);
+        //     }
+        // }
+        // function delRow(lectureIndex) {
+        //     if (liRowIdx > 0) {
+        //         lecture_table.deleteRow(lectureIndex);
+        //         liRowIdx--;
+        //     }
+        // }
+
+        function newpopup() {
+            window.open("add_lecture_popup", "popup_data", "width=800, height=400,left=100,top=100,toolbar=no, location=no, directories=no, status=no, menubar=no, resizable=no, scrollbars=no, copyhistory=no");
+        }
+
+        function deleteLecture() {
+            // console.log("line clicked : " + rowIndex);
+
+            $(function(){
+                $('button').on('click', function(){
+                    var lectureIndexString = $(this).val();
+                    
+                    var lectureSplit = lectureIndexString.split(' ');
+
+                    var lectureId = lectureSplit[0];
+                    var lectureIndex = lectureSplit[1];
+
+                    console.log("lecture ID in DB : " + lectureId + "  lectureIndex On Web : " + lectureIndex);
+                    
+                    $.ajax({
+                        url:'/deleteLectureFromDB',
+                        data: {"lectureId": lectureId},
+                        type: 'POST',
+                        success: function(response) {
+                            console.log('전송 성공');
+                        },
+                        error: function(error) {
+                            console.log(error);
+                        }
+                    });
+                });
+            });
+        }
+
+    </script>
+</div>
+<div>
+    
+    <!-- <div> -->
+        <!-- 강의 번호 : <input type="text" name="lectureId" id="lectureId" value="" maxlength="3" size="16" style="background-color:white"/>
+        강의 명 : <input type="text" name="lectureName" id="lectureName" value="" maxlength="15" size="16" style="background-color:white"/>    
+        교수 명 : <input type="text" name="profName" id="profName" value="" maxlength="3" size="4" style="background-color:white"/>
+        강의 정보 : <input type="text" name="lectureInfo" id="lectureInfo" value="" style="background-color:white"/> -->
+    <!-- </div> -->
+    <!-- <br /> -->
+    <!-- <div> -->
+        <!-- <input type="button" value=" 추가 " style="background-color:white" onclick="addRow()"/> -->
+        <!-- <input type="button" value=" 삭제 " style="background-color:white" onclick="delRow1(document.all.dyntbl1)"/> -->
+    <!-- </div> -->
+    <!-- <p id="testMessage"></p> -->
+    <input type="button" value=" 강의 추가 하기" style="background-color:white" onclick="newpopup()"/>
+
+    <br /><br />
+    <div style="float: none">
+        <div style="float: left">
+            <table id="lecture_table" border="1" cellspaceing="0" style="width: 800px; height: 400px; display: block; overflow: auto;">
+                <tr>
+                    <td width="140">
+                        전공
+                    </td>
+                    <td width="140">
+                        강의 명
+                    </td>
+                    <td width="80">
+                        교수 명
+                    </td>
+                    <td width="400">
+                        강의 정보
+                    </td>
+                    <td width="40">
+                        
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </div>
+    </div>
+</div>

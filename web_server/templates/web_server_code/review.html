@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>리뷰보기</title>
+    <meta charset="UTF-8">
+    <script language="javascript" type="text/javascript">
+        var liRowIdx = 0;
+        var review_list={{ content_of_reviews | tojson }};
+        alert("실행되었습니다" + review_list);
+
+    </script>
+</head>
+<body>
+    
+    <div>
+        <script type="text/javascript">
+            document.write(review_list);
+          </script>
+    </div>
+    
+
+</body>
+</html>

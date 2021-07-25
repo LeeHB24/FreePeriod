@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>강의 추가</title>
+    <script language="javascript" type="text/javascript">
+        function apeneraddRow() {
+
+            major = document.getElementById("major").value;
+            lectureName = document.getElementById("lectureName").value;
+            profName = document.getElementById("profName").value;
+
+            // lectureInfo 만들기
+            var lectureInfo = "";
+
+            numOfClass = document.getElementById("numOfClass").value;
+
+            lecturePlace1 = document.getElementById("lecturePlace1").value;
+            lectureDate1 = document.getElementById("lectureDate1").value;
+            lectureStartTime1 = document.getElementById("lectureStartTime1").value;
+            lectureEndTime1 = document.getElementById("lectureEndTime1").value;
+
+            lecturePlace2 = document.getElementById("lecturePlace2").value;
+            lectureDate2 = document.getElementById("lectureDate2").value;
+            lectureStartTime2 = document.getElementById("lectureStartTime2").value;
+            lectureEndTime2 = document.getElementById("lectureEndTime2").value;
+
+            lecturePlace3 = document.getElementById("lecturePlace3").value;
+            lectureDate3 = document.getElementById("lectureDate3").value;
+            lectureStartTime3 = document.getElementById("lectureStartTime3").value;
+            lectureEndTime3 = document.getElementById("lectureEndTime3").value;
+
+            if (lectureName == "") {
+                document.getElementById("messageText").innerHTML = "강의 명을 입력하세요.";
+                return;
+            } else if (profName == "") {
+                document.getElementById("messageText").innerHTML = "교수 명을 입력하세요.";
+                return;
+            }
+
+            switch(numOfClass) {
+                case "":
+                    document.getElementById("messageText").innerText = "강의 일수를 선택하세요.";
+                    return;
+                    break;
+                case "1":
+                    if (lecturePlace1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime1 >= lectureEndTime1) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    }
+                    // json 만들기
+                    lectureInfo += "\"class_info\": [{\"day\": \" " + lectureDate1 + 
+                    "\", \"place\": \"" + lecturePlace1 +
+                    "\", \"end_time\": " + lectureEndTime1 +
+                    ", \"start_time\": " + lectureStartTime1 +
+                    "}]";
+                    break;
+                case "2":
+                    if (lecturePlace1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime1 >= lectureEndTime1) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    } else if (lecturePlace2 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate2 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime2 >= lectureEndTime2) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    } else if (lectureDate1 == lectureDate2) {
+                        document.getElementById("messageText").innerHTML = "요일이 같을 수 없습니다.";
+                        return;
+                    }
+                    // json 만들기
+                    lectureInfo += "\"class_info\": [{\"day\": \"" + lectureDate1 + 
+                    "\", \"place\": \"" + lecturePlace1 +
+                    "\", \"end_time\": " + lectureEndTime1 +
+                    ", \"start_time\": " + lectureStartTime1 +
+                    "}, {\"day\": \"" + lectureDate2 + 
+                    "\", \"place\": \"" + lecturePlace2 +
+                    "\", \"end_time\": " + lectureEndTime2 +
+                    ", \"start_time\": " + lectureStartTime2 +
+                    "}]";
+                    break;
+                case "3" :
+                    if (lecturePlace1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate1 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime1 >= lectureEndTime1) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 1 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    } else if (lecturePlace2 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate2 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime2 >= lectureEndTime2) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 2 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    } else if (lecturePlace3 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 3 : 강의실을 입력하세요.";
+                        return;
+                    } else if (lectureDate3 == "") {
+                        document.getElementById("messageText").innerHTML = "강의 일수 3 : 요일을 입력하세요.";
+                        return;
+                    } else if (lectureStartTime3 >= lectureEndTime3) {
+                        document.getElementById("messageText").innerHTML = "강의 일수 3 : 강의 시작 시간이 강의 종료 시간보다 빨라야 합니다.";
+                        return;
+                    } else if (lectureDate1 == lectureDate2 || lectureDate1 == lectureDate3 || lectureDate2 == lectureDate3) {
+                        document.getElementById("messageText").innerHTML = "요일이 같을 수 없습니다.";
+                        return;
+                    }
+                    // json 만들기
+                    lectureInfo += "\"class_info\": [{\"day\": \"" + lectureDate1 + 
+                    "\", \"place\": \"" + lecturePlace1 +
+                    "\", \"end_time\": " + lectureEndTime1 +
+                    ", \"start_time\": " + lectureStartTime1 +
+                    "}, {\"day\": \"" + lectureDate2 + 
+                    "\", \"place\": \"" + lecturePlace2 +
+                    "\", \"end_time\": " + lectureEndTime2 +
+                    ", \"start_time\": " + lectureStartTime2 +
+                    "}, {\"day\": \"" + lectureDate3 + 
+                    "\", \"place\": \"" + lecturePlace3 +
+                    "\", \"end_time\": " + lectureEndTime3 +
+                    ", \"start_time\": " + lectureStartTime3 +
+                    "}]";
+                    break;
+                default:
+                    break;
+            }
+            parent.opener.popup_add_lecture(major, lectureName, profName, lectureInfo);
+            document.getElementById("messageText").innerHTML = "강의를 추가합니다.\n" + lectureInfo;
+            // document.getElementById("messageText").value = lectureInfo;
+        }
+
+        function divControl() {
+            var selectedItem = document.getElementById("numOfClass").value;
+
+            var div1 = document.getElementById("div1");
+            var div2 = document.getElementById("div2");
+            var div3 = document.getElementById("div3");
+
+            if (selectedItem == 1) {
+                div1.style.display = "block";
+                div2.style.display = "none";
+                div3.style.display = "none";
+            } else if (selectedItem == 2) {
+                div1.style.display = "block";
+                div2.style.display = "block";
+                div3.style.display = "none";
+            } else if (selectedItem == 3) {
+                div1.style.display = "block";
+                div2.style.display = "block";
+                div3.style.display = "block";
+            } else {
+                div1.style.display = "none";
+                div2.style.display = "none";
+                div3.style.display = "none";
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <!-- 강의 번호 : <input type="text" name="lectureId" id="lectureId1" value=""  maxlength="15" size="16"/> -->
+    <!-- 학과 : <input type="number" name="major" id="major" min="0" max="5"/> -->
+    
+    <div>
+        <!-- 학과 : <input type="text" placeholder="학과를 선택하세요" list="majorList"/> -->
+        전공 : <select id="major">
+            <option value="소프트웨어학과">소프트웨어학과</option>
+            <option value="사이버보안학과">사이버보안학과</option>
+            <option value="국방디지털융합학과">국방디지털융합학과</option>
+            <option value="교양">교양</option>
+        </select>
+        강의 명 : <input type="text" name="lectureName" id="lectureName" value=""/>
+        교수 명 : <input type="text" name="profName" id="profName" value="" maxlength="3" size="8"/>
+    </div>
+    <BR/>
+    일주일에 강의 개수 : <select id="numOfClass" onchange="divControl()">
+        <option value="" selected="selected">-</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+    </select>
+    <!-- 강의 정보 : <input type="text" name="lectureInfo" id="lectureInfo" value=""/> -->
+    <BR/>
+    <!--강의 정보 입력 란-->
+    <div id="div1" style="display: none;">
+        1 : 
+        <div>
+            강의실 : <input type="text" name="lecturePlace1" id="lecturePlace1" value=""/>
+            요일 : <select id="lectureDate1">
+                <option value="" selected="selected"></option>
+                <option value="MON">MON</option>
+                <option value="TUE">TUE</option>
+                <option value="WED">WED</option>
+                <option value="THU">THU</option>
+                <option value="FRI">FRI</option>
+            </select>
+            시작 시간 : <select id="lectureStartTime1">
+                <option value="" selected="selected"></option>
+                <option value="540">AM 9:00</option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+            </select>
+            종료 시간 : <select id="lectureEndTime1">
+                <option value="" selected="selected"></option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+                <option value="1360">PM 9:00</option>
+            </select>
+        </div>
+    </div>
+    <div id="div2" style="display: none;">
+        2 : 
+        <div>
+            강의실 : <input type="text" name="lecturePlace2" id="lecturePlace2" value=""/>
+            요일 : <select id="lectureDate2">
+                <option value="" selected="selected"></option>
+                <option value="MON">MON</option>
+                <option value="TUE">TUE</option>
+                <option value="WED">WED</option>
+                <option value="THU">THU</option>
+                <option value="FRI">FRI</option>
+            </select>
+            시작 시간 : <select id="lectureStartTime2">
+                <option value="" selected="selected"></option>
+                <option value="540">AM 9:00</option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+            </select>
+            종료 시간 : <select id="lectureEndTime2">
+                <option value="" selected="selected"></option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+                <option value="1360">PM 9:00</option>
+            </select>
+        </div>
+    </div>
+    <div id="div3" style="display: none;">
+        3 : 
+        <div>
+            강의실 : <input type="text" name="lecturePlace3" id="lecturePlace3" value=""/>
+            요일 : <select id="lectureDate3">
+                <option value="" selected="selected"></option>
+                <option value="MON">MON</option>
+                <option value="TUE">TUE</option>
+                <option value="WED">WED</option>
+                <option value="THU">THU</option>
+                <option value="FRI">FRI</option>
+            </select>
+            시작 시간 : <select id="lectureStartTime3">
+                <option value="" selected="selected"></option>
+                <option value="540">AM 9:00</option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+            </select>
+            종료 시간 : <select id="lectureEndTime3">
+                <option value="" selected="selected"></option>
+                <option value="630">AM 10:30</option>
+                <option value="720">PM 12:00</option>
+                <option value="810">PM 1:30</option>
+                <option value="900">PM 3:00</option>
+                <option value="990">PM 4:30</option>
+                <option value="1180">PM 6:00</option>
+                <option value="1270">PM 7:30</option>
+                <option value="1360">PM 9:00</option>
+            </select>
+        </div>
+    </div>
+    <BR/>
+    <!-- <form method="POST" action="/add_lecture"> -->
+    <p name="messageText" id="messageText" value="">  -  </p>
+    <button value=" 추가 " onclick="apeneraddRow()">추가</button>
+    <!-- </form> -->
+    <div>
+        
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>공강때 뭐해?</title>
+<meta charset="UTF-8">
+<link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cute+Font&amp;subset=korean" rel="stylesheet">
+<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
+<style>
+      body {
+        font-family: 'Cute Font', cursive;
+      }
+    </style>
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="/">공강때 뭐해?</a></h1>
+      <h2>공강때 심심한 당신을 위해 만든 싸-비스</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="User">유저 관리</a></li>
+        <li><a href="lecture">강의 관리</a></li>
+       <!-- <li><a href="ad_register">광고 관리</a></li> -->
+      </ul>
+    </nav>
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" style="width:740px;"><a href="index.html"></a><img src="{{ url_for('static', filename='images/main.jpg') }}" width="700" alt=""></a></section>
+    <!-- main content --> 
+    <div id="homepage">
+      <!-- Services -->
+      <section id="services" class="clear">
+        <article class="one_third">
+          <figure><a href="ad_register"><img src="{{ url_for('static', filename= 'images/ADregister.jpg')}}" width="200" height="100" alt=""></a>
+          </figure>
+        </article>
+        
+        <article class="one_third lastbox">
+          <figure><a href="login"><img src="{{ url_for('static', filename= 'images/login.jpg')}}" width="200" height="100" alt=""></a>
+          </figure>
+        </article>
+      </section>
+      <!-- / Services -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- ########################################################################################## -->
+      <!-- Introduction -->
+     
+      <!-- / Introduction -->
+    </div>
+    <!-- / content body -->
+  </div>
+</div>
+<!-- Footer -->
+
+
+
+
+<div class="wrapper row3">
+  <div id="footer" class="clear">
+    <!-- Section One -->
+    <section class="one_quarter">
+      <h2 class="title">개발자-Capsaicine</h2>
+      <nav>
+        <ul>
+          <li><a href="#">김현정</a></li>
+          <li><a href="#">박준규</a></li>
+          <li><a href="#">박혜진</a></li>
+          <li><a href="#">이환범</a></li>
+          <li><a href="#">정진선</a></li>
+        </ul>
+      </nav>
+    </section>
+   
+    <!-- / Section -->
+<!-- Copyright -->
+
+</body>
+</html>

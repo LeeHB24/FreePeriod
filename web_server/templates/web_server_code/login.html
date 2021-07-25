@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>공강때 뭐해?</title>
+<meta charset="UTF-8">
+<link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cute+Font&amp;subset=korean" rel="stylesheet">
+
+ 
+<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
+<style>
+      body {
+        font-family: 'Cute Font', cursive;
+      }
+    </style>
+</head>
+ 
+
+{% block content %}
+{% if session['logged_in'] %}
+<p>You're logged in already!</p>
+{% else %}
+<!-- 로그인 실패시 메세지 -->
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		{% for message in messages %} 
+			<p style="color: red">{{ message }}</p><br>
+		{% endfor %}
+	{% endif %}
+{% endwith %}
+<form action="/login" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Login</h1>
+			</div>
+ 
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="username" name="username">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+				<div class="control-group">
+				<input type="password" class="login-field" value="" placeholder="password" name="password">
+				<label class="login-field-icon fui-lock" for="login-pass"></label>
+				</div>
+ 
+                <input type="submit" value="Log in" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+{% endif %}
+{% endblock %}

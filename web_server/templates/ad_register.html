@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>공강때 뭐해?</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles/layout.css" type="text/css">
+<link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Cute+Font&amp;subset=korean" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Cute+Font&subset=korean');
+</style>
+<!--[if lt IE 9]><script src="scripts/html5shiv.js"></script><![endif]-->
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="/">공강때 뭐해?</a></h1>
+      <h2>광고 등록 페이지</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="User">유저 관리</a></li>
+        <li><a href="lecture">강의 관리</a></li>
+        <!-- <li class="last"><a href="#">로그인</a></li> -->
+      </ul>
+    </nav>
+  </header>
+</div>
+
+<!-- content -->
+<div class="wrapper row2">
+  <div id="container" class="clear">
+    <!-- Slider -->
+		<!-- <section id="slider"><a href="ad_register"><img src="images/demo/rr2.jpg" alt=""></a></section> -->
+		<section id="slider" style="width:740px;"><a href="index.html"></a><img src="{{ url_for('static', filename='images/main.jpg') }}" width="700" alt=""></a></section>
+    <!-- main content -->
+    <div id="homepage">
+			<section id="ad_register_service" class="clear">
+				<article class="parent">
+					
+					<div style="width: 80%; margin:0 auto; vertical-align: middle; text-align: center;">
+            <form method="POST" action="/ad_register_request">
+              <fieldset>
+
+                <!--From Name-->
+                <p>"공강 때 뭐해?"의 관리자에게 광고 등록 요청을 보내세요</p>
+                
+                <!--Text input-->
+                <!-- <div class="form-group"> -->
+                <label style="padding: 10px; font-size: 20px;">E-mail</label>
+                <div>
+                <input name="email" type="text" placeholder="email 을 입력하세요" style="background-color: white; padding: 5px; font-size: 20px; width: 200px;">
+                </div>
+                <!-- </div> -->
+
+                <!--Textarea-->
+                <!-- <div> -->
+                <label style="padding: 10px; font-size: 20px;">광고 내용 설명</label>
+                <div>
+                <!-- <textarea id="ad_content" name="ad_content"></textarea> -->
+                <textarea name="ad_content" rows="10" style="resize: none; padding: 5px; font-size: 20px; width: 600px"></textarea>
+                </div>
+                <!-- </div> -->
+
+                <!--Button-->
+                <!-- <div> -->
+                <input id="ad_register_button" name="ad_register_button" type="submit" value="관리자에게 광고 보내기">
+                <!-- </div> -->
+              </fieldset>
+
+              <!-- <div>  
+                <p style="padding: 10px; font-size: 20px;">email : </p>
+                <input type="text" value="" placeholder="email" name="email" style="background-color: white; padding: 5px; font-size: 20px; width: 200px; border: 1px solid black;">
+              </div>
+              <div>
+                <textarea rows="10" style="resize: none; padding: 5px; font-size: 20px; width: 600px"></textarea>
+              </div> -->
+
+            </form>
+            
+					</div>
+				
+				</article>
+			</section>
+			  
+		</div>
+		
+    <!-- / content body -->
+  </div>
+</div>
+<!-- Footer -->
+
+<div class="wrapper row3">
+    <div id="footer" class="clear">
+      <!-- Section One -->
+      <section class="one_quarter">
+        <h2 class="title">개발자-Capsaicine</h2>
+        <nav>
+          <ul>
+            <li><a href="#">김현정</a></li>
+            <li><a href="#">박준규</a></li>
+            <li><a href="#">박혜진</a></li>
+            <li><a href="#">이환범</a></li>
+            <li><a href="#">정진선</a></li>
+          </ul>
+        </nav>
+      </section>
+
+
+</body>
+</html>
