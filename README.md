@@ -15,7 +15,7 @@
 ![image](https://user-images.githubusercontent.com/35019895/126892502-3bae6a01-dc04-4051-8521-7c3e8f7ef044.png)
 ![image](https://user-images.githubusercontent.com/35019895/126892504-7af951a3-d09e-4df0-a037-9dc0fda2f512.png)
 
-- Product Backlog 및 번다운차트
+- Product Backlog 및 번다운차트(Iteration 2)
 
 ![image](https://user-images.githubusercontent.com/35019895/126892532-1d8150f2-d6e8-441b-81e4-b496c849b809.png)
 ![image](https://user-images.githubusercontent.com/35019895/126892535-204dcf50-76e5-41f5-bb7f-d2d296db42c2.png)
