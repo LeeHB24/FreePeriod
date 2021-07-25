@@ -1,0 +1,23 @@
+# built application files
+*.apk
+*.ap_
+
+# Mac OS X clutter
+*.DS_Store
+
+# Windows clutter
+Thumbs.db
+
+.idea/
+*.iml
+.gradle
+/local.properties
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/build
+/captures
+.externalNativeBuild
+.idea/caches/build_file_checksums.ser
+/.idea/caches/build_file_checksums.ser
+
