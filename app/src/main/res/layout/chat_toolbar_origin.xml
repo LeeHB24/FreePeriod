@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    style="@style/HeaderBar"
+    app:contentInsetStart="0dp"
+    app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    android:background="@color/colorPrimaryDark"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:elevation="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/imgbtn_toolbarChat_back"
+            android:layout_height="match_parent"
+            android:layout_width="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:src="@drawable/iconback"
+            app:layout_constraintLeft_toLeftOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_toolbarChat_roomName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="방이름"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toRightOf="@+id/imgbtn_toolbarChat_back"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_toolbarChat_search"
+            />
+        <ImageButton
+            android:id="@+id/imgbtn_chatting_map"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:layout_margin="6dp"
+            android:background="@color/colorPrimaryDark"
+            android:src="@android:drawable/ic_dialog_map"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_toolbarChat_search"/>
+        <ImageButton
+            android:id="@+id/imgbtn_toolbarChat_search"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:layout_margin="6dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_toolbarChat_drawer"
+            />
+        <ImageButton
+            android:id="@+id/imgbtn_toolbarChat_drawer"
+            android:background="@color/colorPrimaryDark"
+            android:layout_margin="6dp"
+            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:src="@drawable/icon_drawer"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.Toolbar>

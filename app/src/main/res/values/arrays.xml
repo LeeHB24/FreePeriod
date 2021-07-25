@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- array의 이름은 major 입니다. -->
+    <string-array name="major">
+        <item>전공을 선택해주세요</item>
+        <item>소프트웨어학과</item>
+        <item>사이버보안학과</item>
+        <item>국방디지털학과</item>
+        <item>교양</item>
+    </string-array>
+</resources>

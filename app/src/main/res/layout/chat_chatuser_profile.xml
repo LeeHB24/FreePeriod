@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_gravity="start"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/default_color"
+        android:id="@+id/imgbtn_dialog_cancel"
+        android:src="@drawable/ic_cancel_black_30dp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_dialog_image"
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/iconuser" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/text_dialog_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="사용자 이름"
+                android:textSize="30dp" />
+
+            <RatingBar
+                android:id="@+id/rating_dialog_rate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:max="6"
+                android:numStars="5"
+                android:rating="3"
+                android:stepSize="1.0"
+                style="?android:attr/ratingBarStyleIndicator"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_margin="5dp"
+                android:background="@drawable/capsaicine_button_shape"
+                android:id="@+id/btn_dialog_review"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="리뷰 남기기" />
+
+            <Button
+                android:layout_margin="5dp"
+                android:background="@drawable/capsaicine_button_shape"
+                android:id="@+id/btn_dialog_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="신고하기" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <ListView
+                android:id="@+id/listView_review"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </ListView>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

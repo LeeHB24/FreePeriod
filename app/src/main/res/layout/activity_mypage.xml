@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.mypage.MyPageActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/nav_bottom">
+        <!-- Your xml here -->
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_weight="1"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/btn_joining"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="참가중"
+                    android:textSize="24sp" />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/btn_waiting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="대기중"
+                    android:textSize="24sp"
+                    />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/btn_permitting"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorPrimaryDark"
+                    android:text="요청 대기중"
+                    android:textSize="24sp">
+                </Button>
+            </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:layout_weight="10"
+                android:id="@+id/recyclerView_mypage_partylist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+            <LinearLayout
+                android:layout_weight="1"
+                android:id="@+id/mypage_layout_bottom"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:background="@color/default_color"
+                android:padding="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/btn_change_pw"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/capsaicine_button_shape"
+                    android:text="비밀번호변경"
+                    android:textSize="18sp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_my_review"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/capsaicine_button_shape"
+                    android:text="내리뷰보기"
+                    android:textSize="18sp"
+                    />
+
+                <Button
+                    android:id="@+id/btn_logout"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/capsaicine_button_shape"
+                    android:text="로그아웃"
+                    android:textSize="18sp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Bottom Navbar for Pivot activity -->
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="3dp"
+        android:paddingBottom="7dp"
+        design:menu="@menu/bottom_nav_pivots"
+        design:itemIconTint="@color/nav_bottom_icon_color"/>
+</RelativeLayout>

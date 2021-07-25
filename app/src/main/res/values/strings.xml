@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FreePeriod</string>
+    <string name="pivot_home">PivotHome</string>
+    <string name="pivot_meal">PivotMeal</string>
+    <string name="pivot_play">PivotPlay</string>
+    <string name="pivot_chat">PivotChat</string>
+    <string name="pivot_mypage">PivotMyPage</string>
+
+    <string name="Message">메세지를 입력하세요</string>
+    <string name="title_activity_my_review">MyReviewActivity</string>
+    <string name="title_activity_writing_review">WritingReviewActivity</string>
+
+</resources>

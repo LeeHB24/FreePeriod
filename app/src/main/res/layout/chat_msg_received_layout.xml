@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="8dp">
+
+
+    <ImageView
+        android:id="@+id/imgView_Chatting_chatter_profile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/iconuser"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/text_Chatting_chatter_name"
+        android:text="John Doe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:textColor="@color/color_black"
+        app:layout_constraintLeft_toRightOf="@+id/imgView_Chatting_chatter_profile"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/text_Chatting_chatter_msg"
+        android:text="hi man, how are you?"
+        android:background="@drawable/chat_msg_received"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="240dp"
+        android:padding="8dp"
+        android:textColor="@color/color_black"
+        android:layout_marginTop="4dp"
+        app:layout_constraintTop_toBottomOf="@+id/text_Chatting_chatter_name"
+        app:layout_constraintLeft_toRightOf="@+id/imgView_Chatting_chatter_profile"
+        android:layout_marginLeft="8dp" />
+
+    <TextView
+        android:id="@+id/text_Chatting_chatter_timeStamp"
+        android:text="11:40"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_black"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@+id/text_Chatting_chatter_msg"
+        android:layout_marginLeft="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_Chatting_chatter_msg" />
+
+
+
+</android.support.constraint.ConstraintLayout>

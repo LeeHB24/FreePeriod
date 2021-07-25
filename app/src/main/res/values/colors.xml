@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FDD23E</color>
+    <color name="colorPrimaryDark">#EDB62C</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTimeTableBlue">#0277BD</color>
+    <color name="colorNavIconSelected">#FFFFFF</color>
+    <color name="colorNavIconDark">#70591F</color>
+    <color name="colorNavIconLight">#F2CB45</color>
+    <color name="pressed_color">#666699</color>
+    <color name="default_color">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="chat_received_color">#99CC00</color>
+    <color name="chat_sent_color">#FFCC00</color>
+</resources>

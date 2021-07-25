@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_item"
+    android:focusable="true"
+    android:clickable="true"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="10dp"
+        android:weightSum="10">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/img_partycover"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:scaleType="fitCenter"/>
+        </RelativeLayout>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="8"
+            android:layout_marginLeft="15dp"
+            android:weightSum="4">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:weightSum="10">
+                <TextView
+                    android:id="@+id/txt_partyname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Party Name"
+                    android:textSize="22sp"
+                    android:textColor="#000000"
+                    android:gravity="center_vertical"
+                    android:layout_weight="7"/>
+                <TextView
+                    android:id="@+id/txt_capacity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:text="(0/0)"
+                    android:textSize="16sp"
+                    android:layout_weight="3"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:weightSum="10">
+                <TextView
+                    android:id="@+id/txt_partytime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="00:00 ~ 00:00 (MON)"
+                    android:textSize="16sp"
+                    android:textColor="#666666"
+                    android:gravity="center_vertical"
+                    android:layout_weight="6"/>
+                <TextView
+                    android:id="@+id/txt_closetime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:text="3min left"
+                    android:textSize="16sp"
+                    android:layout_weight="4"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_partytags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

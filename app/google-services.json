@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "566929883402",
+    "firebase_url": "https://fcmtutorial-6892f.firebaseio.com",
+    "project_id": "fcmtutorial-6892f",
+    "storage_bucket": "fcmtutorial-6892f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566929883402:android:4fc10d8d1f006cee",
+        "android_client_info": {
+          "package_name": "com.example.js960.fcmproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566929883402-b7rrubengbbqueup6nbt4j3ktjk96kic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANKyE1e3AiMLtVf7f95Fbz9EUg2dYKcv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566929883402:android:b0bfa23b4002bf2f",
+        "android_client_info": {
+          "package_name": "xyz.capsaicine.freeperiod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566929883402-b7rrubengbbqueup6nbt4j3ktjk96kic.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANKyE1e3AiMLtVf7f95Fbz9EUg2dYKcv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

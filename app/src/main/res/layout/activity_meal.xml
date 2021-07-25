@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:design="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activities.meal.MealActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:ignore="NamespaceTypo">
+
+    <LinearLayout
+        android:id="@+id/linear_meal_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="8dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="밥 모임"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"/>
+        <Button
+            android:id="@+id/btn_create_meal_party"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모임개설"
+            android:textSize="18sp"
+            android:layout_marginLeft="15dp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/colorPrimaryDark"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="right">
+            <ImageButton
+                android:id="@+id/ibtn_search_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_access_time_black_30dp"
+                android:background="#00ffffff"
+                android:layout_marginRight="10dp"/>
+            <ImageButton
+                android:id="@+id/ibtn_search_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search_black_30dp"
+                android:background="#00ffffff"
+                android:layout_gravity="right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/line_meal_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/linear_meal_top"
+        android:background="@android:color/darker_gray"/>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_meal_top"
+        android:layout_above="@id/nav_bottom">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_partycard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+        </android.support.v7.widget.RecyclerView>
+    </android.support.constraint.ConstraintLayout>
+
+    <!-- Bottom Navbar for Pivot activity -->
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/nav_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:paddingTop="3dp"
+        android:paddingBottom="7dp"
+        design:menu="@menu/bottom_nav_pivots"
+        design:itemIconTint="@color/nav_bottom_icon_color"/>
+</RelativeLayout>

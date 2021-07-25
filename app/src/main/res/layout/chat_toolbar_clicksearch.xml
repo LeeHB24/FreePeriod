@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    style="@style/HeaderBar"
+    app:contentInsetStart="0dp"
+    app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    android:background="@color/colorPrimaryDark"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:elevation="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageButton
+            android:id="@+id/imgbtn_toolbarChat_tmpsearch"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:src="@android:drawable/ic_menu_search"
+            android:layout_margin="6dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+            />
+        <EditText
+            android:id="@+id/edittext_toolbarChat_searchtext"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:textAlignment="viewStart"
+            android:hint="대화내용 검색"
+            android:textSize="20dp"
+            app:layout_constraintLeft_toRightOf="@+id/imgbtn_toolbarChat_tmpsearch"
+            app:layout_constraintRight_toLeftOf="@+id/imgbtn_toolbarChat_searchcancel"
+            />
+
+        <ImageButton
+            android:layout_margin="6dp"
+            android:id="@+id/imgbtn_toolbarChat_searchcancel"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            app:layout_constraintRight_toRightOf="parent"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.Toolbar>
