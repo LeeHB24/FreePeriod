@@ -37,7 +37,9 @@
 ![image](https://user-images.githubusercontent.com/35019895/128051847-2bf43fa1-6fd5-4a62-bc82-16dff0ef64c3.png)
 
 
-- Product Backlog 및 번다운차트(Iteration 2)
+#프로젝트 일정 관리(product backlong를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
+ - Iteration 1
 
-![image](https://user-images.githubusercontent.com/35019895/126892532-1d8150f2-d6e8-441b-81e4-b496c849b809.png)
-![image](https://user-images.githubusercontent.com/35019895/126892535-204dcf50-76e5-41f5-bb7f-d2d296db42c2.png)
+![image](https://user-images.githubusercontent.com/35019895/128057200-81ca88da-359c-4f43-bde9-570cab9fc282.png)
+![image](https://user-images.githubusercontent.com/35019895/128057206-5e3450f0-c1f7-44e0-802f-0e0cb9357be4.png)
+
