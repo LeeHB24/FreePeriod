@@ -16,18 +16,18 @@
 ![image](https://user-images.githubusercontent.com/35019895/128050592-9fdeb69a-6d5e-49c9-aa0f-865ff71477db.png)
 ![image](https://user-images.githubusercontent.com/35019895/128050626-2c0f9bf2-8ca2-4f51-bc4d-d0b9a32c7635.png)
 
--모임 개설하기
+- 모임 개설하기
 
 ![image](https://user-images.githubusercontent.com/35019895/128051404-2df1545d-2940-4d36-bb72-228e22d41ede.png)
 ![image](https://user-images.githubusercontent.com/35019895/128051416-3dc59c4d-820a-4908-a7bc-80a59c6378bb.png)
 ![image](https://user-images.githubusercontent.com/35019895/128051447-5b7564fc-dd8b-4fdd-b0fc-3567310cd1b2.png)
 
--모임 내 채팅하기
+ - 모임 내 채팅하기
 
 ![image](https://user-images.githubusercontent.com/35019895/128051662-57e32bcb-a4d5-40ca-8d7b-331bf524ff30.png)
 ![image](https://user-images.githubusercontent.com/35019895/128051687-1075d519-1334-48dd-8059-680f275fd453.png)
 
-약속 장소 설정하기
+ - 약속 장소 설정하기
 
 ![image](https://user-images.githubusercontent.com/35019895/128051839-81a34058-a408-4ee1-ba58-c79cf9860853.png)
 ![image](https://user-images.githubusercontent.com/35019895/128051847-2bf43fa1-6fd5-4a62-bc82-16dff0ef64c3.png)
