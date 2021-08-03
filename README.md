@@ -9,11 +9,11 @@
 -	Nodemailer : 학교이메일 인증을 위해 사용한다.
 -	Firebase Cloud Messaging(FCM) : 모임 참가, 요청, 공지사항 등을 푸시 기능을 통해 사용자에게 알리기 위해 사용한다.
 
-![image](https://user-images.githubusercontent.com/35019895/126892483-df3c70bc-8f07-4d7b-9647-1ec5f199a355.png)
-![image](https://user-images.githubusercontent.com/35019895/126892496-7f37041d-4a9b-46a8-9d9f-0689cd19d33c.png)
-![image](https://user-images.githubusercontent.com/35019895/126892498-c0cfb8eb-16ec-4701-8e11-a0750e55d6c8.png)
-![image](https://user-images.githubusercontent.com/35019895/126892502-3bae6a01-dc04-4051-8521-7c3e8f7ef044.png)
-![image](https://user-images.githubusercontent.com/35019895/126892504-7af951a3-d09e-4df0-a037-9dc0fda2f512.png)
+#메인 시나리오
+- 강의 추가하기
+![image](https://user-images.githubusercontent.com/35019895/128050556-ea5ebf1f-6418-4229-8c94-b78edb69056f.png)
+![image](https://user-images.githubusercontent.com/35019895/128050592-9fdeb69a-6d5e-49c9-aa0f-865ff71477db.png)
+![image](https://user-images.githubusercontent.com/35019895/128050626-2c0f9bf2-8ca2-4f51-bc4d-d0b9a32c7635.png)
 
 - Product Backlog 및 번다운차트(Iteration 2)
 
