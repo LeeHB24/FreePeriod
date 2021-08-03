@@ -1,11 +1,11 @@
 # FreePeriod
 ## Project for 2018-2 Capstone Design
-#프로젝트 개요
+# 프로젝트 개요
  - 시간표 UI를 통한 일정 관리
  - 밥/활동 등의 자유로운 모임 개설
  - 채팅, 지도등의 기능을 이용하여 모임 약속
 
-#핵심 기술 요소
+# 핵심 기술 요소
 -	REST API : REST 요청을 통해 사용자의 모든 정보와 모임에 대한 정보를 변경/조회하는데 사용한다.
 -	Node.js & Express.js : <공강 때 뭐해?>의 서버를 개발할 때 사용한다.
 -	MySQL : 사용자, 모임, 리뷰, 신고 등, 서비스에 필요한 모든 정보 저장 및 관리에 사용한다.
@@ -13,7 +13,7 @@
 -	Nodemailer : 학교이메일 인증을 위해 사용한다.
 -	Firebase Cloud Messaging(FCM) : 모임 참가, 요청, 공지사항 등을 푸시 기능을 통해 사용자에게 알리기 위해 사용한다.
 
-#주요 기능들
+# 주요 기능들
 - 강의 추가하기
 
 ![image](https://user-images.githubusercontent.com/35019895/128050556-ea5ebf1f-6418-4229-8c94-b78edb69056f.png)
@@ -37,7 +37,7 @@
 ![image](https://user-images.githubusercontent.com/35019895/128051847-2bf43fa1-6fd5-4a62-bc82-16dff0ef64c3.png)
 
 
-#프로젝트 일정 관리(product backlong를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
+# 프로젝트 일정 관리(product backlong를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
  - Iteration 1
 
 ![image](https://user-images.githubusercontent.com/35019895/128057306-950e4962-91fc-472a-a310-ea8b41da2172.png)
@@ -59,7 +59,7 @@
 ![image](https://user-images.githubusercontent.com/35019895/128057511-f5bc6f80-6de0-4c8e-b37b-1971813bf058.png)
 
 
-#소스 코드 중 내가 개발한 부분
+# 소스 코드 중 내가 개발한 부분
  - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/activities/chat
  - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/app
  - node.js 서버 코드 전부
