@@ -59,7 +59,9 @@
 ![image](https://user-images.githubusercontent.com/35019895/128057511-f5bc6f80-6de0-4c8e-b37b-1971813bf058.png)
 
 
-#내가 개발한 부분
- - 
+#소스 코드 중 내가 개발한 부분
+ - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/activities/chat
+ - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/app
+ - node.js 서버 코드 전부
 
 
