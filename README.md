@@ -5,6 +5,7 @@
  - 밥/활동 등의 자유로운 모임 개설
  - 채팅, 지도등의 기능을 이용하여 모임 약속
 
+
 # 핵심 기술 요소
 -	REST API : REST 요청을 통해 사용자의 모든 정보와 모임에 대한 정보를 변경/조회하는데 사용한다.
 -	Node.js & Express.js : <공강 때 뭐해?>의 서버를 개발할 때 사용한다.
@@ -12,6 +13,8 @@
 -	socket.io : 소켓을 이용하여 <공강 때 뭐해?>의 실시간 채팅 기능 구현에 사용한다.
 -	Nodemailer : 학교이메일 인증을 위해 사용한다.
 -	Firebase Cloud Messaging(FCM) : 모임 참가, 요청, 공지사항 등을 푸시 기능을 통해 사용자에게 알리기 위해 사용한다.
+- SQLIte Database : 채팅 내용, 모임 목록 등 서버와의 연결이 끊어져도 기존의 데이터를 보여주기 위해 로컬 데이터베이스를 지원한다.
+
 
 # 주요 기능들
 - 강의 추가하기
@@ -57,6 +60,7 @@
 
 ![image](https://user-images.githubusercontent.com/35019895/128057492-bcff60c6-c7f4-4144-8bf4-3a11b66f6207.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057511-f5bc6f80-6de0-4c8e-b37b-1971813bf058.png)
+
 
 # DB 스키마
 
