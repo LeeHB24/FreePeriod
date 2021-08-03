@@ -1,5 +1,6 @@
-# FreePeriod
-## Project for 2018-2 Capstone Design
+# FreePeriod (Project for 2018-2 Capstone Design)
+
+
 # 프로젝트 개요
  - 시간표 UI를 통한 일정 관리
  - 밥/활동 등의 자유로운 모임 개설
