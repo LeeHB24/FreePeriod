@@ -58,6 +58,10 @@
 ![image](https://user-images.githubusercontent.com/35019895/128057492-bcff60c6-c7f4-4144-8bf4-3a11b66f6207.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057511-f5bc6f80-6de0-4c8e-b37b-1971813bf058.png)
 
+# DB 스키마
+
+![db스키마(수정)](https://user-images.githubusercontent.com/35019895/128059442-e08a9065-3f85-4f9b-8fa5-3de5f24f067d.PNG)
+
 
 # 소스 코드 중 내가 개발한 부분
  - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/activities/chat
