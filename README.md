@@ -71,6 +71,7 @@
 # 소스 코드 중 내가 개발한 부분
  - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/activities/chat
  - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/app
+ - FreePeriod/app/src/main/java/xyz/capsaicine/freeperiod/login
  - node.js 서버 코드 전부
 
 
