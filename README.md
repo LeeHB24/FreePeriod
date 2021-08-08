@@ -42,22 +42,22 @@
 
 
 # 프로젝트 일정 관리(product backlong를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
- - Iteration 1
+ - Iteration 1(2018-09-20 ~ 10-19)
 
 ![image](https://user-images.githubusercontent.com/35019895/128057306-950e4962-91fc-472a-a310-ea8b41da2172.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057315-142dcc48-b470-4024-9695-f7b710e395db.png)
 
- - Iteration 2
+ - Iteration 2(2018-10-22 ~ 11-09)
 
 ![image](https://user-images.githubusercontent.com/35019895/128057357-c52fe934-0ef0-4b55-a24e-e1d5e05b7fe4.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057370-8d94cb23-7a4e-4d27-b3f4-4e9b84139203.png)
 
- - Iteration 3
+ - Iteration 3(2018-11-10 ~ 11-30)
 
 ![image](https://user-images.githubusercontent.com/35019895/128057415-a84985a4-5c0f-45cc-8558-8110fe1de614.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057441-a3cc918b-7b1f-4bff-9b1b-20e180029981.png)
 
- - Iteration 4
+ - Iteration 4(2018-12-03 ~ 12-12)
 
 ![image](https://user-images.githubusercontent.com/35019895/128057492-bcff60c6-c7f4-4144-8bf4-3a11b66f6207.png)
 ![image](https://user-images.githubusercontent.com/35019895/128057511-f5bc6f80-6de0-4c8e-b37b-1971813bf058.png)
