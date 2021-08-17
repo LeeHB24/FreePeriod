@@ -41,7 +41,7 @@
 ![image](https://user-images.githubusercontent.com/35019895/128051847-2bf43fa1-6fd5-4a62-bc82-16dff0ef64c3.png)
 
 
-# 프로젝트 일정 관리(product backlong를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
+# 프로젝트 일정 관리(product backlog를 작성하였고, burndown chart를 이용하여 개발 일정 관리)
  - Iteration 1(2018-09-20 ~ 10-19)
 
 ![image](https://user-images.githubusercontent.com/35019895/128057306-950e4962-91fc-472a-a310-ea8b41da2172.png)
